@@ -16,9 +16,16 @@ class subtractmodel(BaseModel):
 def subtract(a:int,b:int):
     return a-b
 
-@app.post("/subtract")
+def multi(a:int,b:int):
+    return a*b
+
+#@app.post("/subtract")
 def subtract_numbers(model: subtractmodel):
     return subtract(model.a, model.b)
 
-##print(add(3,4))
-print(subtract_numbers(10,4))
+@app.post("/multiplication")
+def multiplication_number(model: subtractmodel):
+    return multi(model.a,model.b)
+
+#print(add(3,4))
+#print(subtract_numbers(10,4))
